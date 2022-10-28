@@ -1,12 +1,12 @@
-FROM node:12.14-alpine as build
+FROM node:12.14-alpine AS build
 
 WORKDIR /usr/local/app
 
 COPY ./ /usr/local/app/
 
-RUN npm install
+RUN npm install --verbose
 
-RUN npm run build
+RUN npm run build --prod
 
 
 FROM nginx:latest
