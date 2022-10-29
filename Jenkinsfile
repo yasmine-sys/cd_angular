@@ -1,14 +1,9 @@
-pipeline {
-    agent any
+node ('worker') {
     
-    stages {
-        stage('Pull GIT') {
-            steps {
-                echo 'Pulling...';
-                  git branch: 'main',
-                  url : 'https://github.com/yasmine-sys/cd_angular.git',
-                  credentialsId: '57a472eb-ae16-4baf-b2c1-d23871f81228';
-            }
-        }
-    }  
+     stage('GIT Pull') {
+        echo 'Pulling...';
+        git branch: 'main',
+        url : 'https://github.com/yasmine-sys/cd_angular.git',
+        credentialsId: '57a472eb-ae16-4baf-b2c1-d23871f81228';
+    }
 }
