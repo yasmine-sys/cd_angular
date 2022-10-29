@@ -10,12 +10,5 @@ pipeline {
                   credentialsId: '57a472eb-ae16-4baf-b2c1-d23871f81228';
             }
         }
-    }
-        stage('Maven Package') {
-            steps {
-                sh "chmod +x mvnw "
-                sh "./mvnw package -DskipTests=true"
-                
-            }
-        }
+    }  
 }
