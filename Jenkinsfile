@@ -9,19 +9,20 @@ node ('worker') {
   
    stage('Install && Build') {
      script {   
-     sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml'
+     sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -vvv'
+       
      }
    }  
   
   stage('Create Image && Build DOCKER') {
      script {   
-     sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml'
+     sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml -vvv'
      }
    }  
   
    stage('Push image to DOCKERHUB') {
      script {   
-     sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml'
+     sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml -vvv'
      }
    } 
 }
