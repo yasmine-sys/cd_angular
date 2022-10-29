@@ -1,0 +1,9 @@
+---
+# tasks file for docker-registry
+
+- name: Tag and push to docker hub
+  docker_image:
+    name: devops
+    repository: dhib23/devops
+    tag: latest
+    push: yes
