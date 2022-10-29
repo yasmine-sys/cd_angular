@@ -13,9 +13,15 @@ node ('worker') {
      }
    }  
   
-  stage('docker') {
+  stage('Docker') {
      script {   
      sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml'
      }
    }  
+  
+   stage('Push image') {
+     script {   
+     sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml'
+     }
+   } 
 }
