@@ -7,19 +7,19 @@ node ('worker') {
                   credentialsId: '57a472eb-ae16-4baf-b2c1-d23871f81228';
     }
   
-//   stage('Build') {
-  //   script {   
-    // sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml'
-    // }
-   //}  
+   stage('Install && Build') {
+     script {   
+     sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml'
+     }
+   }  
   
-  stage('Docker') {
+  stage('Create Image && Build DOCKER') {
      script {   
      sh 'ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml'
      }
    }  
   
-   stage('Push image') {
+   stage('Push image to DOCKERHUB') {
      script {   
      sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml'
      }
