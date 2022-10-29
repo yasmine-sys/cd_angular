@@ -16,7 +16,7 @@ services:
            retries: 10
     restart: always
   backend:
-    image: 'slowwsloth/zied_cicd_back:latest'
+    image: 'dhib23/yasmine_cicd_back:latest'
     ports:
            - "8089:8089"
     links:
@@ -25,7 +25,7 @@ services:
            - "db"
     restart: always
   frontend:
-    image: 'slowwsloth/zied_cicd_front:latest'
+    image: 'dhib23/yasmine_cicd_front:latest'
     links:
            - "backend"
     depends_on:
