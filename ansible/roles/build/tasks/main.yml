@@ -2,7 +2,7 @@
 # tasks file for build
 
     - name: Install dep
-      shell: npm install
+      shell: npm install --verbose
 
     - name: build app
       shell: ng build --prod
