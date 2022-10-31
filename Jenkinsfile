@@ -25,4 +25,10 @@ node ('worker') {
      sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml -vvv'
      }
    } 
+  
+  stage('Docker Compose') {
+     script {   
+     sh 'ansible-playbook ansible/dockerCompose.yml -i ansible/inventory/host.yml -vvv'
+     }
+   } 
 }
