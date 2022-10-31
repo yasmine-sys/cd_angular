@@ -9,7 +9,7 @@ node ('worker') {
   
    stage('Install && Build') {
      script {   
-     sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml'
+     sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -vvv'
        
      }
    }  
