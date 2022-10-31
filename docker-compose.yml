@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+
+  frontend:
+    image: 'dhib23/devops:latest'
+    ports:
+           - "4200:80"
