@@ -26,9 +26,4 @@ node ('worker') {
      }
    } 
   
-  stage('Docker Compose') {
-     script {   
-     sh 'ansible-playbook ansible/dockerCompose.yml -i ansible/inventory/host.yml -vvv'
-     }
-   } 
 }
