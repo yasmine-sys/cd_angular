@@ -2,7 +2,7 @@
 # tasks file for dockerCompose
 
     - name: Docker Compose
-      shell: docker-compose up&
+      shell: docker-compose up -d
 
 
 
