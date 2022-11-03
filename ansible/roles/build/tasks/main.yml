@@ -1,8 +1,8 @@
 ---
 # tasks file for build
 
-    - name: Install dep
-      shell: npm install --force
+#    - name: Install dep
+#      shell: npm install --force
 
     - name: build app
       shell: ng build --prod
