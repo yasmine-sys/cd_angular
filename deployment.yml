@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cd-app
+spec:
+  selector:
+    matchLabels:
+      app: cd-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cd-app
+    spec:
+      containers:
+        - name: cd-app
+          image: dhib23/devops:latest
+          ports:
+            - containerPort: 80
