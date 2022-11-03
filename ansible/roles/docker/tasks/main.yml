@@ -11,10 +11,4 @@
     state: present
     force_source: true
 - name: run container docker
-  docker_container:
-    name: myapp_container
-    image: 'devops:latest'
-    state: started
-    recreate: true
-    ports:
-      - '4200:80'
+
