@@ -26,4 +26,11 @@ node ('worker') {
      }
    } 
   
+   stage('Orchestration via KUBERNETES') {
+     script {   
+     sh "kubectl apply -f deployment.yml"
+     sh "kubectl apply -f service.yml"
+     }
+   } 
+  
 }
