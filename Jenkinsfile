@@ -29,6 +29,7 @@ node ('worker') {
    stage('Orchestration via KUBERNETES') {
      script {   
      sh "minikube start --force --driver=docker"  
+     sh " alias kubectl="minikube kubectl --" "
      sh "kubectl apply -f deployment.yml"
      sh "kubectl apply -f service.yml"
      }
