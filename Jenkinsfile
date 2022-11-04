@@ -32,6 +32,7 @@ node ('worker') {
    //  sh """ alias kubectl="minikube kubectl --" """
      sh "minikube kubectl -- apply -f deployment.yml"
      sh "minikube kubectl -- apply -f service.yml"
+     sh "minikube service cd-app-svc --url"
      }
    } 
   
