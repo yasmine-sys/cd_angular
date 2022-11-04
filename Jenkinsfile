@@ -7,7 +7,7 @@ node ('worker') {
                   credentialsId: '57a472eb-ae16-4baf-b2c1-d23871f81228';
     }
   
-  /* stage('Install && Build PROJECT') {
+  stage('Install && Build PROJECT') {
      script {   
      sh 'ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -vvv'
        
@@ -25,7 +25,7 @@ node ('worker') {
      sh 'ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml -vvv'
      }
    } 
-  */
+  
    stage('Orchestration via KUBERNETES') {
      script {   
      sh "minikube start --force --driver=docker"  
