@@ -1,4 +1,4 @@
-node ('maître') {
+node ('maitre') {
     
      stage('GIT Pull') {
         echo 'Pulling...';
