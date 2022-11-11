@@ -39,7 +39,7 @@ node ('worker') {
       stage("Send EMAIL") {
       script {
           mail bcc: '', 
-          body: "Build ${BUILD_DISPLAY_NAME} on ${JOB_NAME} was successful. You can visit the web page directly : ${params.url} ", cc: '', from: '', replyTo: '', subject: "${BUILD_NUMBER} was run successfully", to: 'yasmine.dhib@esprit.tn'
+          body: "Build ${BUILD_DISPLAY_NAME} on ${JOB_NAME} was successful. cc: '', from: '', replyTo: '', subject: "${BUILD_NUMBER} was run successfully", to: 'yasmine.dhib@esprit.tn'
      }
    }
   
